@@ -1,0 +1,125 @@
+#!/bin/sh
+case "$1" in
+get)
+	case "$2" in
+	http_port)
+		flash get-http-port
+		;;
+	https_port)
+		flash get-https-port
+		;;
+	register_st)
+		flash get-register-st
+		;;
+	mac_addr)
+		flash get-mac-addr
+		;;
+	attr_0)
+		flash get-attr_0
+		;;
+	attr_1)
+		flash get-attr_1
+		;;
+	attr_2)
+		flash get-attr_2
+		;;
+	attr_3)
+		flash get-attr_3
+		;;
+	wlan_ap_list)
+		echo "1" >"/var/mydlink_ap_scan.txt"
+		sleep 4
+		flash mdb get-wlan_ap_list
+		;;
+	*)
+		flash mdb "get-$2" 
+	;;
+	esac
+	;;
+set)
+	case "$2" in
+	register_st)
+		flash set MYDLINK_REGISTER_ST $3
+		;;
+	attr_0)
+		flash set MYDLINK_ATTR_0 $3
+		;;
+	attr_1)
+		flash set MYDLINK_ATTR_1 $3
+		;;
+	attr_2)
+		flash set MYDLINK_ATTR_2 $3
+		;;
+	attr_3)
+		flash set MYDLINK_ATTR_3 $3
+		;;
+	*)
+#		flash mdb "set-$2" $3
+		flag=0
+		for arg in $@
+		do
+			if [ $flag = $# ]; then
+				flag=`expr $flag + 1`
+			else
+				arg3=$arg
+			fi
+		done
+		flash mdb "set-$2" "$arg3" 
+		;;
+	esac
+	;;
+apply)
+	flash mdb apply
+	;;
+*)
+	echo "mdb version: 1.20"
+	echo "Usage: mdb {command} <params>"
+	echo "Commands:"
+	echo "  get fw_version                       Show firmware version"
+	echo "  get dev_model                        Show Device model"
+	echo "  get dev_name                         Show Device name"
+	echo "  get admin_passwd                     Show Device admin password"
+	echo "  get http_port                        Show http service port"
+	echo "  get https_port                       Show https service port" 
+	echo "  get register_st                      Show Mydlink registered status"
+	echo "  get mac_addr                         Show Device mac address"
+	echo "  get attr_0                           Show Reserved slot for future use"
+	echo "  get attr_1                           Show Reserved slot for future use"
+	echo "  get attr_2                           Show Reserved slot for future use"
+	echo "  get attr_3                           Show Reserved slot for future use"
+	echo "  get attr_4                           Show Reserved slot for future use"
+	echo "  get attr_5                           Show Reserved slot for future use"
+	echo "  get attr_6                           Show Reserved slot for future use"
+	echo "  get attr_7                           Show Reserved slot for future use"
+	echo "  get attr_8                           Show Reserved slot for future use"
+	echo "  get attr_9                           Show Reserved slot for future use"
+	echo "  get wan_mode                         Show Wan port mode"
+	echo "  get static_ip_info                   Show Infomation of static ip mode"
+	echo "  get eth_cable_st                     Show Ethernet cable connected state"
+	echo "  get wlan_conn_st                     Show Wireless connected state"
+	echo "  get cur_ip_info                      Show Current ip,mask,gateway and dns"
+	echo "  get pppoe_info                       Show PPPOE information"
+	echo "  get wlan_st_info                     Show Wireless radio status"
+	echo "  get wlan_info                        Show Wireless informaion"
+	echo "  get wlan_ap_list                     Show Current scan result"
+	
+	echo "  set admin_passwd                     Set Device admin password"
+	echo "  set register_st                      Set Mydlink registered status"
+	echo "  set attr_0                           Set Reserved slot for future use"
+	echo "  set attr_1                           Set Reserved slot for future use"
+	echo "  set attr_2                           Set Reserved slot for future use"
+	echo "  set attr_3                           Set Reserved slot for future use"
+	echo "  set attr_4                           Set Reserved slot for future use"
+	echo "  set attr_5                           Set Reserved slot for future use"
+	echo "  set attr_6                           Set Reserved slot for future use"
+	echo "  set attr_7                           Set Reserved slot for future use"
+	echo "  set attr_8                           Set Reserved slot for future use"
+	echo "  set attr_9                           Set Reserved slot for future use"
+	echo "  set wan_mode                         Set Wan port mode"
+	echo "  set static_ip_info                   Set Infomation of static ip mode"
+	echo "  set pppoe_info                       Set PPPOE information"
+	echo "  set wlan_st_info                     Set Wireless radio status"
+	echo "  set wlan_info                        Set Wireless informaion"
+	;;
+esac
+exit 0
