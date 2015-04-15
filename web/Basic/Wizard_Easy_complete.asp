@@ -59,7 +59,14 @@ function GoToSign()
 {
 	if(connect==1)
 	{
-		self.location.href="Wizard_Mydlink_Sign.asp?t="+new Date().getTime()+"&err=0&sign_in&complete";
+               if("<% getIndexInfo("adminPass"); %>" != "")
+               {
+		       self.location.href="Wizard_Mydlink_Sign.asp?t="+new Date().getTime()+"&err=0&sign_in&complete";
+               }
+               else if(confirm(sw("txtSetDevPassFirst")))
+               {
+                       self.location.href="../Tools/Admin.asp?t="+new Date().getTime();
+               }
 	}
 	else
 	{

@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "3. korak: odaberite vremensku zonu"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Lozinka"
+);
+var txtAdvanced = new Array(
+"Napredno"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Trenutne mrežne postavke i stanje veze prikazani su dolje. Ako želite ponovno konfigurirati postavke bežične mreže, kliknite gumb \"Konfiguriraj\". Također možete unijeti napredne postavke klikom na \"Napredno\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Nakon što kliknete gumb “dovršeno”, trebate unijeti korisničko ime i zaporku kako biste kod sljedeće prijave mogli pristupiti uređaju."
+);
+var txtSetDevPassFirst = new Array(
+"Za postavljanje mydlink registracije administratorska zaporka ne smije ostati prazna. Želite li promijeniti administratorsku zaporku?"
+);

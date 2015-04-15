@@ -1048,3 +1048,19 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "STEP 3: SELECT YOUR TIME ZONE"
 );
+var txtNewPassword = new Array(
+"Password"
+);
+var txtAdvanced = new Array(
+"Advanced"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"The current network settings and the connection status are displayed below. If you want to reconfigure your wireless settings, please click the \"Configure\" button. You can also enter advanced settings by clicking \"Advanced\"."
+);
+var txtWizardEasyStepPressStore1 = new Array(
+" After clicking the “complete” button, you need to provide your username and password to access the device when logging in next time."
+);
+var txtSetDevPassFirst = new Array(
+"The Admin password could not be blank to set the mydlink registration. Would you want to change the Admin password?"
+);

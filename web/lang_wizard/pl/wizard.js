@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Etap 3: Wybór strefy czasowej"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Hasło"
+);
+var txtAdvanced = new Array(
+"Zaawansowane"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Bieżące ustawienia sieciowe i stan połączenia wyświetlone są poniżej. Jeśli chcesz ponownie skonfigurować ustawienia sieciowe, kliknij przycisk \"Skonfiguruj\". Możesz również wprowadzić ustawienia zaawansowane, klikając przycisk \"Zaawansowane\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Po kliknięciu przycisku “ukończono” konieczne będzie podanie nazwy użytkownika i hasła, aby uzyskać dostęp do urządzenia podczas kolejnego logowania."
+);
+var txtSetDevPassFirst = new Array(
+"Hasło administratora użyte do rejestracji mydlink nie może być puste. Czy chcesz zmienić hasło administratora?"
+);

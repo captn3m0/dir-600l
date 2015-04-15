@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "3. lépés: Időzóna kiválasztása"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Jelszó"
+);
+var txtAdvanced = new Array(
+"Speciális"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"A jelenlegi hálózati beállítások és a kapcsolódás állapota lentebb jelenik meg. Ha újra szeretné konfigurálni a vezeték nélküli beállításokat, kattintson a \"Konfigurálás\" gombra. A speciális beállításokba a \"Speciális\" gombra kattintva is beléphet."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"A “befejezés” gombra való kattintás után meg kell adnia a felhasználónevét és jelszavát, hogy a következő belépésnél hozzáférhessen az eszközhöz."
+);
+var txtSetDevPassFirst = new Array(
+"A mydlink regisztráció beállításához az adminisztrátori jelszó nem lehet üres. Módosítani szeretné az adminisztrátori jelszót?"
+);

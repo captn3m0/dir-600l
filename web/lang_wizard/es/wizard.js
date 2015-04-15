@@ -1048,3 +1048,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Paso 3: Seleccionar su zona horaria"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"contraseña"
+);
+var txtAdvanced = new Array(
+"Avanzado"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"A continuación se muestran los parámetros de red actuales y el estado de la conexión. Si desea volver a configurar sus parámetros inalámbricos, haga clic en el botón \"Configurar\". También puede acceder a los parámetros avanzados haciendo clic en \"Avanzado\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+" Después de hacer clic en el botón \"completo\", necesitará suministrar su nombre de usuario y contraseña para acceder el dispositivo la próxima vez que inicie sesión."
+);
+var txtSetDevPassFirst = new Array(
+"La contraseña de administrador no puede estar en blanco para establecer el registro mydlink. ¿Te gustaría cambiar la contraseña de administrador?"
+);

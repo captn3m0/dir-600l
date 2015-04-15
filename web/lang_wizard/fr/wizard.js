@@ -1048,3 +1048,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Étape 3 : Sélectionnez votre fuseau horaire"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Mot de passe"
+);
+var txtAdvanced = new Array(
+"Configuration"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Les paramètres réseau actuels et l'état de la connexion s'affichent ci-dessous. Pour reconfigurer vos paramètres sans fil, cliquez sur le bouton \"Configurer\". Vous pouvez également saisir des paramètres avancés en cliquant sur \"Configuration\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Après avoir cliqué sur le bouton « terminé », vous devez indiquer votre nom d'utilisateur et votre mot de passe pour accéder au périphérique à la prochaine connexion."
+);
+var txtSetDevPassFirst = new Array(
+"Le mot de passe administrateur ne peut pas être vide pour mettre l'enregistrement mydlink. Voudriez-vous changer le mot de passe administrateur?"
+);

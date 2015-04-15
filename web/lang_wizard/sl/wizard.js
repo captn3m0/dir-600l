@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Korak 3: Izberite časovni pas"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Geslo"
+);
+var txtAdvanced = new Array(
+"Napredno"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Spodaj se prikazujejo trenutne omrežne nastavitve in stanje povezave. Če želite znova namestiti svoje brezžične nastavitve, kliknite gumb \"Konfiguriraj\". Lahko odprete tudi napredne nastavitve, tako da kliknete \"Napredno\""
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Potem ko kliknete gumb \"zaključi\", boste morali vpisati uporabniško ime in geslo, ki jih boste potrebovali, ko boste naslednjič dostopali do naprave."
+);
+var txtSetDevPassFirst = new Array(
+"Za namestitev registracije mydlink skrbniško geslo ne sme biti prazno. Ali želite spremeniti skrbniško geslo?"
+);

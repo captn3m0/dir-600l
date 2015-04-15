@@ -1048,3 +1048,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Passo 3: selezione del fuso orario"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Password"
+);
+var txtAdvanced = new Array(
+"Impostazioni avanzate"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Le impostazioni di rete correnti e lo stato della connessione sono visualizzate di seguito. Se si desidera riconfigurare le impostazioni wireless, fare clic sul pulsante \"Configura\". È inoltre possibile accedere alle impostazioni avanzate facendo clic su \"Impostazioni avanzate\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+" Dopo aver fatto clic sul pulsante “Save”, è necessario specificare il nome utente e la password per accedere al dispositivo all'accesso successivo."
+);
+var txtSetDevPassFirst = new Array(
+"La password di amministratore non può essere vuoto per impostare la registrazione mydlink. Vorresti cambiare la password di amministratore?"
+);

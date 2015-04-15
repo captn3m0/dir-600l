@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Βήμα 3: Επιλέξτε τη Ζώνη ώρας σας"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Κωδικός πρόσβασης"
+);
+var txtAdvanced = new Array(
+"Για προχωρημένους"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Οι τρέχουσες ρυθμίσεις δικτύου και η κατάσταση σύνδεσης εμφανίζονται παρακάτω. Εάν επιθυμείτε να αναδιαμορφώσετε τις ασύρματες ρυθμίσεις σας, κάντε κλικ στο κουμπί \"Διαμόρφωση\". Μπορείτε επίσης να εισάγετε προημένες ρυθμίσεις, κάνοντας κλικ στο \"Για προχωρημένους\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Αφού κάνετε κλικ στο κουμπί \"ολοκληρώθηκε\", θα πρέπει να παρασχέσετε το όνομα χρήστη και τον κωδικό πρόσβασής σας για πρόσβαση στη συσκευή κατά την επόμενη σύνδεσή σας."
+);
+var txtSetDevPassFirst = new Array(
+"Ο κωδικός πρόσβασης διαχειριστή δεν μπορεί να είναι κενός κατά τη ρύθμιση της εγγραφής στο mydlink. Θέλετε να αλλάξετε τον κωδικό πρόσβασης διαχειριστή;"
+);

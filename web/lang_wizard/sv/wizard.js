@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Steg 3: Välj tidszon"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Lösenord"
+);
+var txtAdvanced = new Array(
+"Avancerat"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"De aktuella nätverksinställningarna och anslutningsstatus visas nedan. Om du vill konfigurera om de trådlösa inställningarna klickar du på knappen \"Konfigurera\". Du kan även använda de avancerade inställningarna genom att klicka på \"Avancerat\""
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"När du har klickat på knappen ”slutfört” måste du ange användarnamn och lösenord för att få åtkomst till enheten vid nästa inloggningstillfälle."
+);
+var txtSetDevPassFirst = new Array(
+"Administratörslösenordet kan inte vara blankt för att ställa in mydlink-registreringen. Vill du ändra administratörslösenordet?"
+);

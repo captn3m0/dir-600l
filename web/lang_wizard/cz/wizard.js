@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Krok 3: Výběr časového pásma"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Heslo"
+);
+var txtAdvanced = new Array(
+"Upřesnit"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Níže jsou zobrazena aktuální nastavení sítě a stav připojení. Chcete-li znovu nakonfigurovat bezdrátovou síť, klikněte na tlačítko \"Konfigurovat\". Také můžete zadat rozšířená nastavení kliknutím na možnost \"Upřesnit\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Po kliknutí na tlačítko „dokončeno“ bude třeba při dalším přihlášení k zařízení zadat uživatelské jméno a heslo."
+);
+var txtSetDevPassFirst = new Array(
+"Při nastavení registrace ke službě mydlink nemůže být heslo správce prázdné. Chcete heslo správce změnit?"
+);

@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Pasul 3: Selectarea fusului orar"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Parolă"
+);
+var txtAdvanced = new Array(
+"Complex"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Setările de reţea curente şi starea conexiunii sunt afişate mai jos. Dacă doriţi să reconfiguraţi setările fără fir, faceţi clic pe butonul \"Configurare\". De asemenea, puteţi accesa setările complexe făcând clic pe \"Complex\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"După ce faceţi clic pe butonul \"finalizat\", trebuie să furnizaţi numele de utilizator şi parola pentru a accesa dispozitivul când vă conectaţi data următoare."
+);
+var txtSetDevPassFirst = new Array(
+"Parola de administrator nu poate fi necompletată pentru a seta înregistrarea mydlink. Doriţi să modificaţi parola de administrator?"
+);

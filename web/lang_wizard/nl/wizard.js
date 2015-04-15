@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Stap 3: Selecteer uw Tijdzone"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Wachtwoord"
+);
+var txtAdvanced = new Array(
+"Geavanceerd"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"De huidige netwerkinstellingen en de aansluitingsstatus worden onderstaand weergegeven. Klik op de knop \"Configureren\" indien u uw draadloze instellingen opnieuw wilt configureren. U kunt ook de geavanceerde instellingen openen door te klikken op \"Geavanceerd\""
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Nadat u op de knop “voltooid” geklikt hebt, moet u uw gebruikersnaam en wachtwoord geven om toegang te krijgen tot het toestel wanneer u de volgende keer aanmeldt."
+);
+var txtSetDevPassFirst = new Array(
+"Het Admin wachtwoord kan niet leeg zijn om de mydlink registratie in te stellen. Wilt u het Admin wachtwoord veranderen?"
+);

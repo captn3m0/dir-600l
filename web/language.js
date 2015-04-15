@@ -879,10 +879,10 @@ var txtUpdate = new Array(
 "Update"
 );
 var txtSureToDelete  = new Array(
-"Are you sure you want to delete: "
+"Are you sure you want to delete "
 );
 var txtSureToUpdate  = new Array(
-"Are you sure you want to update: "
+"Are you sure you want to update "
 );
 var txtAction = new Array(
 "Action"
@@ -4356,7 +4356,7 @@ var txtEasysetupComplete = new Array(
 "easysetup complete"
 );
 var txtCancel1 = new Array(
-"Exit"
+"     Exit     "
 );
 var txtWizardEasyStepConfig2 = new Array(
 "Setting"
@@ -4365,7 +4365,7 @@ var txtEasysetupComplete1 = new Array(
 "Complete"
 );
 var txtWizardEasyLangSelectUsa = new Array(
-"The wizard will guide you through the steps requried to setup your D-Link router."
+"The wizard will guide you through the steps required to setup your D-Link router."
 );
 var txtWizardEasyAutoUsa = new Array(
 "Auto-Detect Setup"
@@ -4375,4 +4375,7 @@ var txtWizardEasyStepPressStore1 = new Array(
 );
 var txtWizardEasyStepThisCurrtySetting1 = new Array(
 "The current network settings and the connection status are displayed below. If you want to reconfigure your wireless settings, please click the \"Configure\" button. You can also enter advanced settings by clicking \"Advanced\"."
+);
+var txtSetDevPassFirst = new Array(
+"The Admin password could not be blank to set the mydlink registration. Would you want to change the Admin password?"
 );

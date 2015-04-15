@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Vaihe 3: Valitse aikavyöhyke"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Salasana"
+);
+var txtAdvanced = new Array(
+"Lisäasetukset"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Nykyiset verkkoasetukset ja yhteyden tila näytetään alla. Jos haluat määrittää langattoman verkon asetukset uudelleen, napsauta \"Määritä\"-painiketta. Voit myös siirtyä lisäasetuksiin valitsemalla \"Lisäasetukset\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Napsautettuasi ”valmis”-painiketta sinun on annettava käyttäjätunnus ja salasana, jotta voit käyttää laitetta kirjautuessasi seuraavalla kerralla."
+);
+var txtSetDevPassFirst = new Array(
+"Admin-salasana ei voinut olla tyhjä mydlink-rekisteröintiä varten. Haluatko vaihtaa Admin-salasanan?"
+);

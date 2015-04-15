@@ -1030,3 +1030,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Trin 3: Vælg din tidszone"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Adgangskode"
+);
+var txtAdvanced = new Array(
+"Avanceret"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"De nuværende netværksindstillinger og forbindelsesstatus vises herunder. Hvis du vil omkonfigurere dine trådløse indstillinger, klikkes på knappen \"Configure\" [Konfigurér]. Du kan også indtaste avancerede indstillinger ved at klikke på \"Avanceret\" [Manuel indstilling]."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Efter klik på knappen \"Save\" [gennemført] skal du indtaste brugernavn og kodeord for adgang til enheden ved login næste gang."
+);
+var txtSetDevPassFirst = new Array(
+"Admin-kodeordet må ikke være tomt ved indstilling af mydlink-registreringen. Vil du ændre Admin-kodeordet?"
+);

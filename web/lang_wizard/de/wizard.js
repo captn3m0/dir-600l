@@ -1048,3 +1048,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Schritt 3: Wählen Sie Ihre Zeitzone"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Kennwort"
+);
+var txtAdvanced = new Array(
+"Erweitert"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"Die aktuellen Netzwerkeinstellungen und der Verbindungsstatus werden unten angezeigt. Falls Sie Ihre Einstellungen für drahtlose Verbindungen neu konfigurieren möchten, klicken Sie auf \"Konfigurieren\". Sie können auch spezielle Einstellungen vornehmen, indem Sie auf \"Erweitert\" klicken."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+" Wenn Sie sich nach dem Klicken auf 'complete' das nächste Mal anmelden, müssen Sie Ihren Benutzernamen und Ihr Kennwort zum Zugriff auf das Gerät angeben."
+);
+var txtSetDevPassFirst = new Array(
+"Das Admin-Passwort nicht leer sein, um die mydlink Registrierung. Möchten Sie das Admin-Passwort ändern?"
+);

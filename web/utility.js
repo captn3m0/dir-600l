@@ -162,7 +162,7 @@ document.getElementById("loader_container").style.display = "none";
 		return false;
 	}
 function print_copyright(){		
-document.write("<div id=\"copyright\">"+sw("txtCopyright")+" &copy; 2009-2013 D-Link Corporation"+sw("txtAllRightreserved")+"</div>");		
+document.write("<div id=\"copyright\">"+sw("txtCopyright")+" &copy; 2009-2014 D-Link Corporation"+sw("txtAllRightreserved")+"</div>");		
 }
 /*
  * schedule_populate_select_without_always()

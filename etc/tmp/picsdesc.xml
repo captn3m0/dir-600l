@@ -13,7 +13,7 @@
   <modelName>D-Link Router</modelName>
   <modelNumber>DIR-600L</modelNumber>
   <modelURL>http://www.dlink.com</modelURL>
-  <serialNumber>204</serialNumber>
+  <serialNumber>205</serialNumber>
   <UDN>uuid:12342409-1234-1234-5678-ee1234cc5678</UDN> 
  <serviceList>
  <service>
@@ -34,7 +34,7 @@
   <modelName>D-Link Router</modelName> 
   <modelNumber>DIR-600L</modelNumber> 
   <modelURL>http://www.dlink.com</modelURL> 
-  <serialNumber>204</serialNumber> 
+  <serialNumber>205</serialNumber> 
   <UDN>uuid:12342409-1234-1234-5678-ee1234cc5678</UDN> 
   <UPC>MINIUPNPD</UPC> 
  <serviceList>
@@ -56,7 +56,7 @@
   <modelName>D-Link Router</modelName> 
   <modelNumber>DIR-600L</modelNumber> 
   <modelURL>http://www.dlink.com</modelURL> 
-  <serialNumber>204</serialNumber> 
+  <serialNumber>205</serialNumber> 
   <UDN>uuid:12342409-1234-1234-5678-ee1234cc5678</UDN> 
   <UPC>MINIUPNPD</UPC> 
  <serviceList>

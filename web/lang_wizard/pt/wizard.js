@@ -1024,3 +1024,21 @@ var txtWizardEasy113Step2 = new Array(
 var txtWizardEasy113Step3 = new Array(
 "Passo 3: selecione o seu Fuso Horário"
 );
+var txtWizardEasyLangSelectUsa = txtWizardEasyStepWelcomeToEasySetUp;
+var txtNewPassword = new Array(
+"Palavra-passe"
+);
+var txtAdvanced = new Array(
+"Avançadas"
+);
+var txtCancel1 = txtCancel;
+var txtWizardEasyStepThisCurrtySetting1 = new Array(
+"As definições de rede actuais e o estado da ligação são exibidos abaixo. Se desejar reconfigurar as suas definições sem fios, clique no botão \"Configurar\". Pode também introduzir as definições avançadas clicando em \"Avançadas\"."
+);
+var txtWizardEasyAutoUsa = txtWizardEasyAutoConfig;
+var txtWizardEasyStepPressStore1 = new Array(
+"Após clicar no botão \"concluído\", deve fornecer o seu nome de utilizador e palavra-passe para aceder ao dispositivo quando iniciar sessão da próxima vez."
+);
+var txtSetDevPassFirst = new Array(
+"A palavra-passe de administrador não poderia ser em branco ao configurar o registo mydlink. Pretende alterar a palavra-passe de administrador?"
+);
