@@ -23,3 +23,5 @@ Date: 10/25/2013
 
 - Extend mydlink wizard timeout value
 - Support unique SSID and password
+
+You can see the generation script in the `source` branch.
