@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrgn49_dlob_dir600b>
+	<runtime>
+		<device>
+			<modelname>DIR-600</modelname>
+			<producturl>http://www.dlink.com.tw</producturl>
+			<description>Wireless Broadband Router</description>
+			<wlandriver>rt2860v2 WiFi driver v2600</wlandriver>
+		</device>
+	</runtime>
+</wrgn49_dlob_dir600b>

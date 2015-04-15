@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<wrgn49_dlob_dir600b>
+	<runtime>
+		<devdata>
+			<flashspeed get="devdata get -e flashspeed" />
+			<pin get="devdata get -e pin" />
+			<psk get="devdata get -e psk" />
+			<countrycode get="devdata get -e countrycode" />
+			<wanmac get="devdata get -e wanmac" />
+			<lanmac get="devdata get -e lanmac" />
+			<wlanmac get="devdata get -e wlanmac" />
+			<bgonly get="devdata get -e bgonly" />
+			<lanpack>/dev/mtdblock/5</lanpack>
+			<hwrev>Bx</hwrev>
+		</devdata>
+	</runtime>
+</wrgn49_dlob_dir600b>

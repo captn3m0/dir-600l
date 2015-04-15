@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<wrgn49_dlob_dir600b>
+	<runtime>
+		<diagnostic>
+			<ping set="/etc/scripts/ping.sh set" get="/etc/scripts/ping.sh get"></ping>
+		</diagnostic>
+	</runtime>
+</wrgn49_dlob_dir600b>
