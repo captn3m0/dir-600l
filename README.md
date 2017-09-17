@@ -1,12 +1,22 @@
-#DIR 600L Dissasembly
+# DIR 600L Dissasembly
 
 This repo contains the last 3 published firmwares for the DIR 600L (Hardware Version B1) router.
 
-The git history is just 3 commits, one for each commit.
+There are 4 commits, one for each release.
 
-I expect this repo to be taken down soon. The source all belongs to D-Link. This is only provided for educational and research purposes.
+~~I expect this repo to be taken down soon.~~ The source all belongs to D-Link. This is only provided for educational and research purposes.
 
-##Changelog
+## Changelog
+
+Firmware: FW2.07.B01WW
+Hardware: B1
+Date: 2015/05/07
+Note:
+    None
+Problems Resolved:
+Fixed Security vulnerabilities as described on [SAP10055]
+- Authentication Bypass
+- Remote Code Execution
 
 Firmware 2.17
 Date: 05/23/2014
