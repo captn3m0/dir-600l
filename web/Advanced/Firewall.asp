@@ -887,8 +887,13 @@ DrawRebootContent("wan");
 <div class="box"><h3><SCRIPT >ddw("txtAntiSpoof");</SCRIPT></h3>
 <fieldset>
 <p><label class="duple">
-<SCRIPT >ddw("txtAntiSpoof");</SCRIPT>
-<SCRIPT >ddw("txtEnable");</SCRIPT>:</label>
+<SCRIPT>
+if(LangCode=="EN"){
+        ddw("txtEnable");document.write(' ');ddw("txtAntiSpoof");
+}else{
+        ddw("txtAntiSpoof");document.write(' ');ddw("txtEnable");
+}
+</SCRIPT>:</label>
 <input type="hidden" id="firewall_anti_spoof" name="anti_spoof" value="<%getIndexInfo("antiSpoofing");%>"/>
 <input type="checkbox" id="firewall_anti_spoof_select" onclick="on_off_selector(firewall_anti_spoof, this, this.checked);"/>
 </p>
@@ -898,8 +903,14 @@ DrawRebootContent("wan");
 <div class="box"><h3><SCRIPT >ddw("txtFirewallSetting");</SCRIPT></h3>
 <fieldset>
 <p><label class="duple">
-SPI <SCRIPT >ddw("txtEnable");</SCRIPT>
-:</label>
+<SCRIPT >
+if(LangCode=="EN")
+{
+        ddw("txtEnable");document.write(' SPI');
+}else{
+        document.write('SPI ');ddw("txtEnable");
+}
+</SCRIPT>:</label>
 <input type="hidden" id="spi_enabled" name="spi_enabled" value="<%getIndexInfo("spi_Enabled");%>"/>
 <input type="checkbox" id="spi_enabled_select" name="spi_enabled_select" value="" onclick="on_off_selector(spi_enabled, this, this.checked);"/>
 </p>

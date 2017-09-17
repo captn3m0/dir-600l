@@ -101,6 +101,10 @@ do
 		updatedd dyndns $WAN_IP $DDNS_USER:$DDNS_PASSWORD $DDNS_DOMAIN_NAME
 		ret=`echo $?`
 	  elif [ $DDNS_TYPE = 4 ]; then
+		rm -f /var/ddns/ddns_status 2> /dev/null
+		rm -f /var/ddns/ddns_domain_name 2> /dev/null
+		rm -f /var/ddns/ddns_user_type 2> /dev/null
+		echo "$DDNS_TYPE" > /var/ddns_user_type
 		updatedd noip $DDNS_USER:$DDNS_PASSWORD $DDNS_DOMAIN_NAME
 		ret=`echo $?`
 	  elif [ $DDNS_TYPE = 3 ]; then
@@ -120,13 +124,18 @@ do
 		echo "Start peanut"
 		peanut $DDNS_USER:$DDNS_PASSWORD 
 		ret=`echo $?`
+          elif [ $DDNS_TYPE = 9 ]; then
+		rm -f /var/ddns_status 2> /dev/null
+                ret=`echo 1`
 	  fi
 	  if [ "$ret" = "0" ]; then
-	    echo "`date +%s`|$WAN_IP:$DDNS_TYPE:$DDNS_USER:$DDNS_PASSWORD:$DDNS_DOMAIN_NAME" > /var/ddns_last_update
+	    	echo "`date +%s`|$WAN_IP:$DDNS_TYPE:$DDNS_USER:$DDNS_PASSWORD:$DDNS_DOMAIN_NAME" > /var/ddns_last_update
 		echo "DDNS update successfully"
+		exlog /tmp/log_web.lck /tmp/log_web "tag:SYSACT;log_num:13;msg:DDNS update successfully;"
 #            break
 	 else
                 echo "DDNS update failed"
+		exlog /tmp/log_web.lck /tmp/log_web "tag:SYSACT;log_num:13;msg:DDNS update failed;"
 		sleep 10
 #
 		if [ "$SET_OUT" -le "4" ]; then
@@ -139,6 +148,7 @@ do
 	  fi
   else
       echo "ddns.sh: wan don't have ip or ddns conf is not changed"
+	exlog /tmp/log_web.lck /tmp/log_web "tag:SYSACT;log_num:13;msg:DDNS wan don't have ip or ddns conf is not changed;"
 #	break
   fi
 #  done

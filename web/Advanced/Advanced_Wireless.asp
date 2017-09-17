@@ -17,6 +17,7 @@ var lang = "<% getLangInfo("lang");%>";
 <script type="text/javascript" src="../utility.js"></script>
 <script type="text/javascript">
 //<![CDATA[
+var channel = "<%getInfo("channel");%>";
 var WLAN_ENABLED; 
 var OP_MODE;
 if('<%getInfo("opmode");%>' =='Disabled')
@@ -619,9 +620,22 @@ function wireless_wlan_chan_band_selector(value)
 	if (value == 1) { // b+g
 		wireless_wlan_chan_bandwidth_selector(0);
 		mf.wireless_wlan_chan_bandwidth_select.disabled = true;
+		mf.wireless_shortgi_select.checked = false;
+		mf.wireless_shortgi_select.disabled = true;
 	}
 	else
-		mf.wireless_wlan_chan_bandwidth_select.disabled = false;	
+	{
+		if(mf.wireless_shortgi.value == "false" || !mf.wireless_shortgi.value)
+		{	mf.wireless_shortgi_select.checked = false;}
+		else
+		{	mf.wireless_shortgi_select.checked = true;}
+
+		mf.wireless_shortgi_select.disabled = false;
+		if(channel != "12" && channel != "13")
+		{	
+			mf.wireless_wlan_chan_bandwidth_select.disabled = false;	
+		}
+	}
 }
 
 function wireless_tx_power_selector(value)
@@ -743,6 +757,11 @@ if(( wireless_mode!= 2 && wireless_wepon == "true") || (wireless_mode != 2 && wi
 	get_by_id("wireless_wlan_chan_band_select").length = 3;
 }
 
+if(channel == "12" || channel == "13")
+{ 
+	get_by_id("wireless_wlan_chan_bandwidth_select").selectedIndex = 0;
+	get_by_id("wireless_wlan_chan_bandwidth_select").disabled = true; 
+}
 wireless_wlan_chan_band_selector(mf.wlan_chan_band.value);
 
 document.getElementById("box_wireless_aggr_limit").style.display = radio.ar5416_extra && (radio.type_NG || radio.type_NA) ? "block" : "none";

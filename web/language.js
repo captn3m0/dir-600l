@@ -2364,7 +2364,7 @@ var txtConnected = new Array(
 "Connected"
 );
 var txtDisconnect = new Array(
-"Disconnect"
+"Disconnected"
 );
 var txtDisconnect1 = new Array(
 "Failed,WAN port has no IP address"
@@ -4378,4 +4378,31 @@ var txtWizardEasyStepThisCurrtySetting1 = new Array(
 );
 var txtSetDevPassFirst = new Array(
 "The Admin password could not be blank to set the mydlink registration. Would you want to change the Admin password?"
+);
+var txtAlibabaSetting = new Array(
+"Alibaba Security Guards"
+);
+var txtAlibabaShow = new Array(
+"Alibaba security guards to help you in real time blocking phishing, fraud and fictitious websites, protect your accounts and financial security in the shopping process. We recommend that you start online shopping default security guards to protect your online shopping security. If you choose to turn off online shopping security guards may result in your account password and funds can not be effective security."
+);
+var txtAlibaba = new Array(
+"Security Guards"
+);
+var txtAlibabaClose = new Array(
+"Close"
+);
+var txtAlibabaTips = new Array(
+"Any questions, please contact customer service"
+);
+var txtAlibabaErr = new Array(
+"Your visit is a dangerous <font color=\"#f00\"> suspected scam sites</font>,Please do not trade money to avoid property damage."
+);
+var txtDDNSServerAddressManual = new Array(
+"Select Dynamic DNS Server"
+);
+var txtdyndnsserverInvalid = new Array(
+"Invalid URL."
+);
+var txtdyndnsservernull = new Array(
+"Dynamic DNS Server Address can not be null."
 );

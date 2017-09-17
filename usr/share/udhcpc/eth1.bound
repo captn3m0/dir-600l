@@ -23,43 +23,6 @@ MAX_DNS=0
 
 /sbin/ifconfig $interface $ip $BROADCAST $NETMASK
 echo "$ip" > /var/eth1_ip
-eval `$GETMIB IP_ADDR`
-eval `$GETMIB SUBNET_MASK`
-eval `$GETMIB DHCP_CLIENT_START`
-eval `$GETMIB DHCP_CLIENT_END`
-ETH1_BROADCAST=`ifconfig eth1 | grep Bcast |sed -e 's/.*Bcast:\([0-9.]*\)  Mask.*/\1/g'`
-BR0_BROADCAST=`ifconfig br0 | grep Bcast |sed -e 's/.*Bcast:\([0-9.]*\)  Mask.*/\1/g'`
-if [ $ETH1_BROADCAST = $BR0_BROADCAST ];then
-	IPaddr1=`echo $IP_ADDR | cut -d '.' -f 1`
-	IPaddr2=`echo $IP_ADDR | cut -d '.' -f 2`
-	IPaddr3=`echo $IP_ADDR | cut -d '.' -f 3`
-	IPaddr4=`echo $IP_ADDR | cut -d '.' -f 4`
-	if [ $IPaddr3 -lt 200 ] && [ $IPaddr3 -ge 0 ]; then
-		IPaddr3=`expr $IPaddr3 + 10`
-	elif [ $IPaddr3 -ge 200 ]; then
-		IPaddr3=`expr $IPaddr3 - 10`
-	fi
-	IP_ADDR=$IPaddr1"."$IPaddr2"."$IPaddr3"."$IPaddr4
-	IPstart4=`echo $DHCP_CLIENT_START | cut -d '.' -f 4`
-	IPend4=`echo $DHCP_CLIENT_END | cut -d '.' -f 4`
-	DHCP_CLIENT_START=$IPaddr1"."$IPaddr2"."$IPaddr3"."$IPstart4
-	DHCP_CLIENT_END=$IPaddr1"."$IPaddr2"."$IPaddr3"."$IPend4
-	flash set IP_ADDR $IP_ADDR
-	flash set DHCP_CLIENT_START $DHCP_CLIENT_START
-	flash set DHCP_CLIENT_END $DHCP_CLIENT_END
-	echo 0 > /var/reload.log
-	killall -9 sleep 2> /dev/null
-	killall -9 udhcpd 2> /dev/null
-	rm -f /var/run/udhcpd.pid 2> /dev/null
-	killall -9 iwcontrol 2> /dev/null			
-	killall -9 wscd 2> /dev/null
-	killall -9 auth 2> /dev/null			
-	killall -9 netfilter_log 2> /dev/null
-	killall -9 ez-ipupdate 2> /dev/null
-	killall -9 sleep 2> /dev/null
-	init.sh gw bridge 615
-fi
-
 rm -f  /var/wanip_fail 2> /dev/null
 if [ $WAN_DHCP = 4 ] || [ $WAN_DHCP = 6 ]; then
 	
@@ -415,6 +378,7 @@ cp $RESOLV_CONF /var/resolv.conf
 eval `flash get DNSRELAY_ENABLED`
 if [ $DNSRELAY_ENABLED = 1 ]; then
 echo start DNS Relay Daemon
+
 dnrd $DNS
 else
 #inform DHCPD for DNS setting

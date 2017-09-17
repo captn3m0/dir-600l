@@ -79,7 +79,7 @@ function entsub(e) {
 			var pwd=get_by_id("login_pass").value;
 			mf =document.forms.myform;
 			
-			if(mf.login_n.value=="")
+			if(get_by_id("login_n").value=="")
 			{
 				alert(sw("txtUserNameBlank"));
 			

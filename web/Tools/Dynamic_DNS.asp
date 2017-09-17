@@ -110,14 +110,15 @@ function dyndns_enabled_selector(checked)
 	}
 	mf.dyndns_user.disabled = disabled;
 	mf.dyndns_pass.disabled = disabled;
+	mf.v4addr.disabled = disabled;
+	mf.v4addrto.disabled = disabled;
 	//mf.confirm_dyndns_pass.disabled = disabled;
-	//mf.dyndns_timeout.disabled = disabled;
+	mf.dyndns_timeout.disabled = disabled;
 /*
         mf.dns_button.disabled = disabled;
 	mf.dyndns_server_user.disabled = disabled;
 	mf.dyndns_server_user2.disabled = disabled;
 */
-	
 }
 
 function dyndns_server_user_selector(user_server)
@@ -141,36 +142,16 @@ function dyndns_server_selector(value)
 		return;
 	}
 	mf.dyndns_host.disabled = false;
-	document.getElementById("check_on_line").disabled = false;
 	get_by_id("type_domain").style.display = "none";
-	
+    
 	if(value == 5)
 	{
 		get_by_id("type_domain").style.display = "";
 		mf.dyndns_host.disabled = true;
-		//document.getElementById("check_on_line").disabled = true;
 		document.getElementById("dsc_oray").style.display = "";
-		document.getElementById("dsc_gen").style.display = "none";
-	    document.getElementById("dsc_ddns_cn").style.display = "none";
-		document.getElementById("dsc_dyndns_com").style.display = "none";
-	}else if(value == 1)
-	{
-		document.getElementById("dsc_oray").style.display = "none";
-		document.getElementById("dsc_gen").style.display = "none";
-		document.getElementById("dsc_ddns_cn").style.display = "";
-		document.getElementById("dsc_dyndns_com").style.display = "none";
-	}else if(value == 7 || value == 8)
-	{
-		document.getElementById("dsc_oray").style.display = "none";
-		document.getElementById("dsc_gen").style.display = "none";
-		document.getElementById("dsc_ddns_cn").style.display = "none";
-		document.getElementById("dsc_dyndns_com").style.display = "";
 	}else
 	{
-		document.getElementById("dsc_gen").style.display = "";
 		document.getElementById("dsc_oray").style.display = "none";
-		document.getElementById("dsc_ddns_cn").style.display = "none";
-		document.getElementById("dsc_dyndns_com").style.display = "none";
 	}
 /** Only update the list's selected option if it exists.*/
 /*
@@ -250,7 +231,35 @@ function isValid_UserName(name, type)
 	return true;
 }	
 /** Validate and submit the form.*/
+function formIsChange(){
 
+		if(mf.dyndns_enabled.value == "false")
+		{
+			if(mf.dyndns_enabled.value != "<%getIndexInfo("ddnsEnabled");%>")
+				return true;
+		}
+		else{
+			if(mf.dyndns_enabled.value != "<%getIndexInfo("ddnsEnabled");%>")
+				return true;
+			if(mf.dyndns_server.value != "<%getIndexInfo("ddnsType");%>")
+				return true;
+			if(mf.dyndns_server_select.value != 5)
+			{
+				if(mf.dyndns_host.value != "<%getIndexInfo("ddnsDomainName");%>")
+					return true;
+			}
+			if(mf.dyndns_user.value != "<%getIndexInfo("ddnsName");%>")
+				return true;
+			if(mf.dyndns_pass.value != "<%getIndexInfo("ddnsPw");%>")
+				return true;
+		}
+    return false;
+}
+function strchk_url1(str)
+{
+        if (__is_str_in_allow_chars(str, 1, "/.:_-?&=%~@#+")) return true;
+    	return false;
+}
 function page_submit()
 {
 	mf.curTime.value = new Date().getTime();
@@ -267,6 +276,17 @@ function page_submit()
 	}
 	if(mf.dyndns_enabled.value == "true")
 	{
+		if(!is_blank(mf.v4addr.value))
+		{
+				if(strchk_url1(mf.v4addr.value)==false){
+						alert(sw("txtdyndnsserverInvalid"));
+						return false;
+				}
+		}
+		else{
+			alert(sw("txtdyndnsservernull"));
+			return false;
+		}
    if (mf.dyndns_user.value.length == 0)
 	 {
 		alert(sw("txtdyndnsusernull"));
@@ -379,7 +399,6 @@ function page_submit()
 	}
 	*/
 	//without timeout setting
-	/*
 	var timeout = mf.dyndns_timeout.value;
 		if (!is_number(timeout)) {
 			alert(sw("txtEnterNumericBetween1and8760"));
@@ -400,7 +419,6 @@ function page_submit()
 			mf.dyndns_timeout.focus();
 			return;
 		}
-	*/	
 	mf.form_submitted.value = "1";
 /*	
 	{
@@ -477,7 +495,6 @@ function xml_done(xml)
 			document.getElementById("dyndns_status").innerHTML = sw("txtpeanutConnecting");
 			document.getElementById("dyndns_dynDomain").innerHTML = "";
 		}
-		document.getElementById("check_on_line").disabled = false;
 		//t = '<% getInfo("ddnsType"); %>';
 		var t = xml.getElementData("dynType");
 	
@@ -500,13 +517,7 @@ function xml_done(xml)
     }
 
 	s = "";
-	if( ddns == 250) {
-				s = "Fail, WAN no IP Adress";
-				s = sDisConnect1;			
-	}else if( ddns == 5) {
-			//s = "Fail, Please check ddns configuration setting";			
-			s = sDisConnect2;			
-	}else if( ddns == 0) {
+	if( ddns == 0) {
 			//s = "Connected";
 			s = sConnected;
 	}else if( ddns == 129) {
@@ -531,7 +542,6 @@ function xml_done(xml)
 	}else
 	{
 		document.getElementById("dyndns_status").innerHTML = s;
-		document.getElementById("check_on_line").disabled = false;
 	}
 }
 function xml_timeout()
@@ -560,9 +570,11 @@ function xml_load()
 }
 function Check_OnLine()
 {
-
+	if (formIsChange()){  //something changed
+		alert(sw("txtsavefirst"));
+		return;
+	}
 	mystatus=0;
-	document.getElementById("check_on_line").disabled = true;
 	document.getElementById("dyndns_status").innerHTML =sw("txtDDNSTesting");
 	//xml_load();
 document.getElementById("dyndns_status").style.display = "block";
@@ -573,6 +585,23 @@ function get_value()
 {
 	xml_load();
 	setTimeout(get_value,6000);
+}
+
+function OnClickAddr()
+{
+	mf = document.forms.mainform;
+	var ddns_addr = mf.dyndns_server.value;
+
+	if(mf.dyndns_enabled.value == "true")
+	{
+		if(ddns_addr == "6")		mf.v4addr.value = "dlinkddns.com";
+		else if(ddns_addr == "5")	mf.v4addr.value = "Oray.cn";
+		else if(ddns_addr == "8")	mf.v4addr.value = "dyndns.com";
+	}
+	else
+	{	
+		mf.v4addr.value = "";
+	}	
 }
 
 function page_load()
@@ -591,22 +620,27 @@ function page_load()
 	mf.dyndns_server.value = "<%<getIndexInfo("ddnsType");%>";
 	if(mf.dyndns_enabled.value == "true")
 	{
+		document.getElementById("dyndns_status").innerHTML = sw("txtConnecting");
 		if( mf.dyndns_server.value != "99" )
 		{
-			dyndns_server_selector(mf.dyndns_server.value);
+			if(LangCode == 'SC'){
+				if( mf.dyndns_server.value == "6" || mf.dyndns_server.value == "5" || mf.dyndns_server.value == "8")
+					dyndns_server_selector(mf.dyndns_server.value);
+				else
+					dyndns_server_selector(9);
+			}else{
+				if( mf.dyndns_server.value == "6" || mf.dyndns_server.value == "8")
+					dyndns_server_selector(mf.dyndns_server.value);
+				else
+					dyndns_server_selector(9);
+			}
 			//mf.dyndns_server_user.value = dyndns_servers_list[mf.dyndns_server.value];
 		}
 	}
 	else
 	{
-		if(LangCode=="SC")
-		{
-			dyndns_server_selector(1);
-		}
-		else
-		{
-			dyndns_server_selector(6);
-		}
+		document.getElementById("dyndns_status").innerHTML = sw("txtDisconnect");
+		dyndns_server_selector(9);
 	}
 	dyndns_enabled_selector(mf.dyndns_enabled.value == "true");
 	/* Check for validation errors. */
@@ -630,7 +664,6 @@ function init()
 	get_by_id("RestartLater").value = sw("txtRebootLater");
 	get_by_id("DontSaveSettings").value = sw("txtDontSaveSettings");
 	get_by_id("SaveSettings").value = sw("txtSaveSettings");
-	get_by_id("check_on_line").value = sw("txtDDNSAccountTesting");
     if(get_by_id("dyndns_server_select").value == 5)
     {
         get_by_id("type_domain").style.display = "";
@@ -691,10 +724,7 @@ DrawRebootContent("wan");
 <h2><SCRIPT >ddw("txtDDNS");</SCRIPT></h2>
 <p><SCRIPT >ddw("txtDDNSStr1");</SCRIPT>
 <br><br>
-<div id="dsc_gen" style="display:none"><SCRIPT >ddw("txtDDNSStr2");</SCRIPT></div>
-<div id="dsc_ddns_cn" style="display:none"><SCRIPT >ddw("txtDDNSS_CN");</SCRIPT></div>
-<div id="dsc_dyndns_com" style="display:none"><SCRIPT >ddw("txtDYNDNS_COM");</SCRIPT></div>
-<div id="dsc_oray" style="display:none"><SCRIPT >ddw("txtpeanut");</SCRIPT><br><a href="http://www.oray.cn/Passport/Passport_Register.asp"><SCRIPT >ddw("txtpeanutserver");</SCRIPT></a><br><a href="http://www.oray.cn/peanuthull/peanuthull_prouser.htm"> <SCRIPT >ddw("txtpeanutupdate");</SCRIPT></a><br><a href="http://ask.oray.cn/"><SCRIPT >ddw("txtpeanuthelp");</SCRIPT></a></div>
+<div id="dsc_oray" style="display:none"><SCRIPT >ddw("txtpeanut");</SCRIPT><br><a href="https://console.oray.com/passport/register.html#per"><SCRIPT >ddw("txtpeanutserver");</SCRIPT></a><br><a href="http://www.oray.cn"> <SCRIPT >ddw("txtpeanutupdate");</SCRIPT></a><br><a href="http://ask.oray.cn/"><SCRIPT >ddw("txtpeanuthelp");</SCRIPT></a></div>
 <br><br>
 </p><input class="button_submit" type="button" id="SaveSettings" name="SaveSettings" value="" onclick="page_submit()"/>
 <input class="button_submit" type="button" id="DontSaveSettings" name="DontSaveSettings" value="" onclick="page_cancel()"/>
@@ -719,6 +749,8 @@ DrawRebootContent("wan");
 <input type="hidden" id="dyndns_server_user" size="25" maxlength="255" onchange="dyndns_server_user_selector(this.value);" />
 <input type="button" id="dns_button" name="dns_button" value="&lt;&lt;" size="3" onClick="dyndns_server_selector(document.getElementById('dyndns_server_select').value);">
 -->
+<input type="text" id="v4addr" name="config.v4addr" maxlength="60" size="20" value="<%getIndexInfo("ddnsServer");%>"  />
+<input type="button" id="v4addrto" value="<<" class="arrow" onClick="OnClickAddr();" />
 <select id="dyndns_server_select" onchange="dyndns_server_selector(this.value)">
 <!--
 <option value="-1">
@@ -728,19 +760,16 @@ DrawRebootContent("wan");
 <SCRIPT>
 if(LangCode=="SC")
 {
-	document.write('<option value="1">dlinkddns.com.cn </option>');
+	document.write('<option value="9">');ddw("txtDDNSServerAddressManual");document.write('</option>');
 	document.write('<option value="6">dlinkddns.com </option>');
-	document.write('<option value="7">DynDns.org(Custom) </option>');
-	document.write('<option value="8">DynDns.org(Free) </option>');
+	document.write('<option value="8">dyndns.com </option>');
 	document.write('<option value="5">');ddw("txtDDNSServerAddressOray");document.write('</option>');
 }
 else
 {
+	document.write('<option value="9">');ddw("txtDDNSServerAddressManual");document.write('</option>');
 	document.write('<option value="6">dlinkddns.com </option>');
-	document.write('<option value="1">dlinkddns.com.cn </option>');
-	document.write('<option value="7">DynDns.org(Custom) </option>');
-	document.write('<option value="8">DynDns.org(Free) </option>');
-	document.write('<option value="5">');ddw("txtDDNSServerAddressOray");document.write('</option>');
+	document.write('<option value="8">dyndns.com </option>');
 	
 }
 </SCRIPT>
@@ -762,29 +791,14 @@ else
 <input type="password" size="30" maxlength="64" id="dyndns_pass" name="config.dyndns_pass" value="<%getIndexInfo("ddnsPw");%>" onfocus="select();" />
 </p>
 
-			<div id="gen_ddns_test" style="display:block">
-			<table>
-			<tr>
-					<td width=170></td>	
-					<td height=20><input type=button id="check_on_line" value="" onClick="Check_OnLine()"></td>
-			</tr>
-			<!--
-			<tr>
-			<td width=170></td>	
-            <td class=c_tb colspan=2 height=20><div id="dyndns_status" style="display:block" /></div></td>
-            </tr> 
-			-->
-			</table>
-			</div>
 
-<!--
 <p>
 <label class="duple">
 <SCRIPT >ddw("txtTimeout");</SCRIPT>
 :</label>
 <input type="text" size="10" maxlength="10" id="dyndns_timeout" name="config.dyndns_timeout" value="<%getIndexInfo("ddns_timeout");%>" />
 <SCRIPT >ddw("txtHour");</SCRIPT>
-</p>--><!-- Status issue -->
+</p><!-- Status issue -->
 <p>
 <label class="duple">
 <SCRIPT >ddw("txtStatus");</SCRIPT>
